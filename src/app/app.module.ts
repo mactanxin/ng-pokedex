@@ -6,11 +6,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TopNavComponent } from './components/top-nav/top-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import { PokedexComponent } from './components/pokedex/pokedex.component';
+import { PokeDetailComponent } from './components/poke-detail/poke-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TopNavComponent
+    TopNavComponent,
+    PokedexComponent,
+    PokeDetailComponent,
   ],
   imports: [
     BrowserModule,
