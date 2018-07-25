@@ -9,6 +9,8 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
 import { PokedexComponent } from './components/pokedex/pokedex.component';
 import { PokeDetailComponent } from './components/poke-detail/poke-detail.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { AppRoutingModule } from './/app-routing.module';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]

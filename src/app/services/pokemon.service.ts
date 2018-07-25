@@ -1,18 +1,17 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http'
-import 'rxjs/add/operator/map'
-import { Observable } from 'rxjs/Rx'
+import { HttpClient } from '@angular/common/http'; 
 
+import { Observable, Subject } from 'rxjs';
+import { map, filter, scan } from 'rxjs/operators';
+import { pokemon_json } from './pokemons';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class PokemonService {
-	private _resource = 'assets/data/pokemons.json'
-	constructor(private _http:Http) { }
+	private _resource = '/assets/data/pokemons.json'
+	constructor(private _http:HttpClient) { }
 
 	getPokemons() {
-		return this._http.get(this._resource).map(res=>res.json());
+		return this._http.get(this._resource);
 	}
 
 	getPokemonByName(name){
