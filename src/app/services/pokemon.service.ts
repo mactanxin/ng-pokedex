@@ -19,9 +19,25 @@ export class PokemonService {
 				for(let idx in pokemons){
 					if (pokemons[idx].name === name) {
 						observer.next(pokemons[idx]);
+						observer.complete();
 					}
 				}
 				// let pokemon = pokemons.filter((pokemon)=> pokemon.name === name);
+			})
+		})
+	}
+
+	getPokemonByType(type){
+		return Observable.create((observer) => {
+			this.getPokemons().subscribe(pokemons => {
+				let results = []
+				for(let idx in pokemons){
+					if (pokemons[idx].type.some( t=>t === type)) {
+						results.push(pokemons[idx]);
+					}
+				}
+				observer.next(results);
+				observer.complete();
 			})
 		})
 	}
