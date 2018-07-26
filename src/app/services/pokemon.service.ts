@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 
 import { Observable, Subject } from 'rxjs';
 import { map, filter, scan } from 'rxjs/operators';
-import { pokemon_json } from './pokemons';
 
 @Injectable()
 export class PokemonService {
@@ -17,7 +16,12 @@ export class PokemonService {
 	getPokemonByName(name){
 		return Observable.create((observer) => {
 			this.getPokemons().subscribe(pokemons=>{
-				let pokemon = pokemons.filter((pokemon)=> pokemon.name === name);
+				for(let idx in pokemons){
+					if (pokemons[idx].name === name) {
+						observer.next(pokemons[idx]);
+					}
+				}
+				// let pokemon = pokemons.filter((pokemon)=> pokemon.name === name);
 			})
 		})
 	}
