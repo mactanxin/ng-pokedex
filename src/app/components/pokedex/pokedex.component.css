@@ -1,0 +1,12 @@
+.pokedex {
+	width: 100%;
+	height: auto;
+	display: flex;
+	flex-wrap: wrap;
+	display: -webkit-flex;
+}
+
+.pokedex .pokeitem{
+	width: 33.3%;
+	height: 100%;
+}

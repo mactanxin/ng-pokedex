@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TopNavComponent } from './components/top-nav/top-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatCardModule, MatChipsModule } from '@angular/material';
 import { PokedexComponent } from './components/pokedex/pokedex.component';
 import { PokeDetailComponent } from './components/poke-detail/poke-detail.component';
 import { AppRoutingModule } from './/app-routing.module';
@@ -28,6 +28,8 @@ import { HttpModule } from '@angular/http';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    MatCardModule,
+    MatChipsModule,
     AppRoutingModule,
     HttpClientModule,
     HttpModule

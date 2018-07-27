@@ -1,3 +1,9 @@
-<p>
-  pokedex works!
-</p>
+<mat-list class="pokedex">
+  <mat-list-item *ngFor="let pokemon of pokemons" class="pokeitem">
+
+    <h4 mat-line>{{pokemon.name}}</h4>
+    <mat-chip-list *ngFor="let type of pokemon.type">
+    	<mat-chip color="" selected>{{type}}</mat-chip>
+    </mat-chip-list>
+  </mat-list-item>
+</mat-list>
